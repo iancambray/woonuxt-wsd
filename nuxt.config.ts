@@ -1,21 +1,21 @@
 export default defineNuxtConfig({
   extends: ['./woonuxt_base'],
   components: [{ path: './components', pathPrefix: false }],
+  
   nitro: {
     prerender: {
       concurrency: 10,
       interval: 1000,
       failOnError: false,
     },
-    minify: true,
-    // Use netlify preset (not netlify-edge)
-    preset: 'netlify'
+    minify: false
   },
-  image: {
-    provider: 'netlify',
-    domains: [
-      'windowsupplydirectltd.co.uk',
-      'secure.woonuxt.com'
-    ]
+  
+  // Runtime config with string values
+  runtimeConfig: {
+    public: {
+      gqlHost: 'https://windowsupplydirectltd.co.uk/graphql',
+      gqlCredentials: 'omit' // String value instead of boolean
+    }
   }
 })
