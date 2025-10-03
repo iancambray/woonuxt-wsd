@@ -2,13 +2,12 @@
   "name": "woonuxt",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev --host",
-    "dev:ssl": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "serve": "nuxi generate && npx serve .output/public -l 8080"
+    "dev": "npx nuxi dev --host",
+    "build": "npx nuxi build",
+    "generate": "npx nuxi generate",
+    "preview": "npx nuxi preview",
+    "postinstall": "npx nuxi prepare",
+    "serve": "npx nuxi generate && npx serve .output/public -l 8080"
   },
   "dependencies": {
     "@stripe/stripe-js": "^7.9.0",
@@ -21,6 +20,7 @@
     "@nuxtjs/i18n": "^9.5.2",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@tailwindcss/typography": "^0.5.16",
+    "nuxi": "^3.28.0",
     "nuxt": "^4.0.3",
     "nuxt-graphql-client": "^0.2.46",
     "prettier": "^3.6.2"
